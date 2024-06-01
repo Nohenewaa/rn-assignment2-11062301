@@ -70,22 +70,24 @@ const App = () => {
 
     return (
         <ScrollView style={styles.flex}>
-
-             <View style={styles.header}>
-                <Text style={styles.title}>Hello, Devs</Text>
-                <Text style={styles.sub}>14 tasks today</Text>
-                <Image source={require('./assets/Profile.png')} style={styles.profilePicture} />
-
+            <View style={styles.header}>
+                <View>
+                    <Text style={styles.title}>Hello, Devs</Text>
+                    <Text style={styles.sub}>14 tasks today</Text>
 
                 </View>
+                <Image source={require('./assets/Profile.png')} style={styles.profilePicture} />
+
+            </View>
                 
         
             <TextInput
-                style={styles.searchBar}
-                placeholder="Search Categories"
-                value={searchQuery}
-                onChangeText={setSearchQuery}
-            />
+            style={styles.searchBar}
+            placeholder="Search Categories"
+            value={searchQuery}
+            onChangeText={setSearchQuery}
+        />
+        
 
             <Text style={styles.subtitle}>Categories</Text>
             <FlatList
@@ -131,17 +133,19 @@ const styles = StyleSheet.create({
         width: 50,
         height: 50,
         borderRadius: 25,
-        marginLeft:10,
-        marginBottom:20,
+        marginLeft:140,
+        marginTop:30
     },
+    
     title: {
         fontSize: 30,
         fontWeight: 'bold',
         color: 'black',
-        marginBottom: 40
+        marginBottom: 0,
+        marginTop:20,
     },
     sub: {
-        fontSize: 20,
+        fontSize: 15,
         color: 'grey',
         marginRight:22,
         marginBottom:10,
@@ -157,6 +161,7 @@ const styles = StyleSheet.create({
         marginBottom: 40,
         color: 'black',
     },
+    
     searchBar: {
         borderWidth: 1,
         borderColor: '#ccc',
@@ -164,6 +169,7 @@ const styles = StyleSheet.create({
         marginBottom: 10,
         borderRadius: 10,
     },
+    
     categoryList: {
         marginBottom: 20,
         backgroundColor:'white',
